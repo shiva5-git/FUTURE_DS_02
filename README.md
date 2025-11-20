@@ -50,7 +50,8 @@ It provides insights by **Gender, Age-Range, Campaign-Name, and Day**.
 ---
 
 ## 📷 Dashboard Preview
-![Facebook Ad Campaign Dashboard](https://github.com/user-attachments/assets/b3619264-4b4d-4d14-b623-608bd54ff7d8)
+![WhatsApp Image 2025-11-20 at 19 48 37_5c115255](https://github.com/user-attachments/assets/cb18bdce-0309-4700-a347-352386dec32b)
+
 
 
 ---
