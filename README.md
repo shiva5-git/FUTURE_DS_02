@@ -1,68 +1,161 @@
-# FUTURE_DS_02
+📣 Social Media Campaign Performance Tracker
+Power BI Dashboard — Facebook & Instagram Ad Analytics
 
-# Facebook Ad Campaign Analysis Dashboard
+This project analyzes Facebook and Instagram ad campaign data to evaluate engagement, CTR, CPC, conversions, and ROI.
+The dashboard helps understand campaign effectiveness, platform performance, and budget optimization.
 
-This project presents a **Facebook Ad Campaign Analysis Dashboard**, built to visualize campaign performance across key metrics such as **Clicks, Impressions, Conversions, and Spend**.  
-It provides insights by **Gender, Age-Range, Campaign-Name, and Day**.
+It is designed for digital marketers, analysts, and businesses focusing on social media growth and paid advertising.
 
----
+📁 Project Structure
+📦 Social-Media-Campaign-Tracker
+ ┣ 📊 Dashboard_Screenshots/
+ ┣ 📜 Campaign_Analytics.pbix
+ ┣ 📂 Dataset/
+ ┃ ┗ social_media_campaign.csv
+ ┗ 📄 README.md
 
-## 📊 Key Metrics
-- **Clicks**: 12K  
-- **Impressions**: 79M  
-- **Top Campaign**: C-1  
+🎯 Project Objective
 
----
+To evaluate the performance of various social media ad campaigns by analyzing:
 
-## 🔍 Dashboard Highlights
+Impressions & Reach
 
-### 1. Approved-Conversion, Amount-Spent and Clicks by Age-Range and Campaign
-- Campaigns analyzed: **C-1, C-2, C-3**
-- Majority conversions in **Age 30–34 group**
-- Spending and clicks decrease with higher age ranges.
+Clicks and CTR
 
-### 2. Amount-Spent by Gender (Pie Chart)
-- **Male (M)**: 87.51% (~17.17K)
-- **Female (F)**: 12.49% (~2.45K)
+Engagement Rates
 
-### 3. Clicks, Impressions, Amount-Spent and Approved-Conversion by Gender & Campaign
-- Gender-based breakdown showing differences across campaigns.
+Cost Efficiency (CPC)
 
-### 4. Approved-Conversion, Amount-Spent and Clicks by Day
-- Time-series trend showing fluctuations over a **30-day period**.
-- Peaks observed around **Day 20–25**.
+Conversions
 
-### 5. Amount-Spent and Total-Conversion by Clicks and Campaign
-- Shows relation of ad spend and total conversions across **C-1, C-2, C-3**.
+Return on Investment (ROI)
 
-### 6. Total-Conversion, Approved-Conversion and Impressions by Day and Age-Range
-- Age groups compared: **30–34, 35–39, 40–44, 45–49**
-- Conversions highest for **30–34 group**.
+Platform comparisons (Facebook vs Instagram)
 
----
+🛠️ Tools & Technologies Used
+Tool	Purpose
+Power BI Desktop	Visualization & dashboard building
+Power Query Editor	Data cleaning & transformation
+DAX	Calculations (CTR, CPC, ROI)
+CSV Dataset	Raw campaign data
+Excel	Preprocessing (optional)
+📥 Dataset Summary
 
-## 📌 Insights
-- **C-1 Campaign** outperformed others in terms of clicks and conversions.
-- Younger age group (30–34) drives the majority of conversions.
-- Male users account for **majority of ad spend (87.51%)**.
-- Spending and conversions show strong peaks around **day 20–25**.
+Sample dataset fields include:
 
----
+Campaign ID
 
-## 📷 Dashboard Preview
-![WhatsApp Image 2025-11-20 at 19 48 37_5c115255](https://github.com/user-attachments/assets/cb18bdce-0309-4700-a347-352386dec32b)
+Platform (Facebook / Instagram)
 
+Impressions
 
+Clicks
 
----
+Conversions
 
-## 🛠️ Tools Used
-- **Power BI** (Data Visualization)
-- **Facebook Ads Data** (Campaign Data Source)
+Likes, Comments, Shares
 
----
+Amount Spent
 
-## 🚀 How to Use
-Clone this repository and explore the README with attached dashboard image.  
-This dashboard can be recreated using **Power BI** with campaign performance data.
+Revenue
 
+Each record represents a campaign’s performance on a specific platform.
+
+🧹 Data Cleaning Process (Power Query)
+
+Performed using Power Query Editor:
+
+Removed null/empty records
+
+Converted numeric fields (Clicks, Impressions, Cost, Revenue)
+
+Created new fields:
+
+Engagement Count
+
+CTR
+
+Engagement Rate
+
+Removed rows where Impressions = 0 (invalid CTR)
+
+🧠 Data Modeling
+
+Single-table model with additional calculated columns:
+
+Engagement = Likes + Comments + Shares
+
+CTR% = (Clicks / Impressions) × 100
+
+ROI% = (Revenue – AmountSpent) / AmountSpent × 100
+
+No complex relationships needed for this dataset.
+
+🔢 DAX Measures Used
+Total Impressions = SUM(Campaign[Impressions])
+
+Total Clicks = SUM(Campaign[Clicks])
+
+CTR % = DIVIDE([Total Clicks], [Total Impressions], 0) * 100
+
+Total Engagement =
+SUM(Campaign[Likes]) + SUM(Campaign[Comments]) + SUM(Campaign[Shares])
+
+Engagement Rate =
+DIVIDE([Total Engagement], [Total Impressions], 0) * 100
+
+CPC = DIVIDE(SUM(Campaign[AmountSpent]), [Total Clicks])
+
+ROI % =
+DIVIDE(SUM(Campaign[Revenue]) - SUM(Campaign[AmountSpent]),
+       SUM(Campaign[AmountSpent])) * 100
+
+📊 Dashboard Features
+✔ KPI Cards
+
+710K Impressions
+
+95K Clicks
+
+13.4% CTR
+
+4,700 Conversions
+
+✔ CTR Formula & Explanation
+
+Displayed clearly to educate non-technical users.
+
+✔ Engagement Split (Donut Chart)
+
+Shows platform-level engagement:
+
+55% Facebook
+
+45% Instagram
+
+✔ CPC vs CTR Scatter Plot
+
+Helps compare campaign efficiency based on:
+
+Cost per Click (CPC)
+
+Click Through Rate (CTR)
+
+✔ ROI by Campaign (Bar Chart)
+
+Shows profitability of each campaign (A, B, C).
+Helps decide which campaigns to scale or optimize.
+
+📈 Insights & Findings
+
+Facebook has slightly higher engagement than Instagram (55% vs 45%).
+
+CTR of 13.4% is strong, showing effective ad creative.
+
+Campaign A produces the highest ROI → should receive higher budget.
+
+Campaign C has the lowest ROI → requires optimization or pause.
+
+CPC vs CTR scatter plot highlights which campaigns are cost-effective.
+
+Engagement levels show which platform works best for interactions.
