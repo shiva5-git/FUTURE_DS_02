@@ -6,6 +6,10 @@ The dashboard helps understand campaign effectiveness, platform performance, and
 
 It is designed for digital marketers, analysts, and businesses focusing on social media growth and paid advertising.
 
+#Dashboard Preview
+![WhatsApp Image 2025-11-20 at 19 48 37_c1e0d00d](https://github.com/user-attachments/assets/9c64fe98-7f45-40e4-b82f-e73b1119dff3)
+
+
 📁 Project Structure
 📦 Social-Media-Campaign-Tracker
  ┣ 📊 Dashboard_Screenshots/
